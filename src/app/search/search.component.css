@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Bowlby+One+SC|Markazi+Text');
+h1{
+    font-family: Pacifico;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: .3px;
+    position: relative;
+    bottom:10px;
+}
+@keyframes btnColor{
+    0% { background-color: #979BD0;  }
+    50% { background-color: #0F1BBF; color:#55DCDE }
+    100% { background-color:#5F0F0C; color:whitesmoke }   
+}
+
+h2{
+    font-family: 'Bowlby One SC';
+    text-align: center;
+}
+.name{
+    font-family: 'Markazi Text', serif;
+        font-size: 18px;
+        position: relative;
+        left:60px;
+        top:20px;
+
+}
+#videoCards{
+    float:left;
+    width: calc(100% - 600px);
+    height: 160px;
+    background-color:rgb(0,0,0,.5);
+    margin:15px;
+    
+}
+#albumImg{
+    height: 160px;
+    width:16%;
+    position: absolute;
+}
+.videoInfo{
+    display: inline-block;
+    word-wrap:break-word;
+    white-space: normal;
+    width:280px;
+    position: relative;
+    left:120px;
+}
+#embedModalBtn{
+    position: relative;
+    left:42%;
+    top: 20px;
+    font-weight: 400;
+    transition:all .2s ease-in;
+}
+#embedModalBtn:hover{
+
+    animation: btnColor .6s;
+    background-color:#5F0F0C; color:whitesmoke;
+}
+.container{
+   position: relative;
+   left: 1%;
+}
+iframe{
+    position: relative;
+    left:50%;
+}
+
+p{
+    position: relative;
+    bottom:60%;
+    text-align: center;
+    color:white;
+}
+.video{
+    position: relative;
+    right:51%;
+}
+
+@media only screen and (max-width: 600px){
+    *{
+        font-size: 12px;
+    }
+    #videoCards{
+        width: calc(100% - 600px);
+        height: 80px;
+        background-color:rgb(0,0,0,.5);
+        margin:15px;
+    }
+}

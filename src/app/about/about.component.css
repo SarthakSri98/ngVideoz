@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Julius+Sans+One|Poiret+One|Orbitron');
+.headings{
+    font-family: 'Bree Serif', serif;
+	font-weight: 600px;
+	letter-spacing: 2px;
+    text-align: center;
+    font-size: 40px;
+	overflow-y: hidden;
+}
+.content{
+    font-family: 'Julius Sans One';
+    margin-left:250px;
+    margin-top:40px;
+    max-width: 600px;
+    text-align: center;
+}
+img{
+    height: 300px;
+    width:420px;
+    border: 2px solid black;
+}
+
+.contact{
+	background-color: #F5F5F5;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+    overflow-y: hidden;
+    overflow-x:hidden;
+	margin: 0;
+	padding: 0;
+    min-height: max-content;
+    box-shadow: 2px 2px 5px #5A4742;
+}
+.dp{
+	height:180px;
+	width:210px;
+	position: relative;
+	top:28px;
+	left:40%;
+	border:none;
+	background-size: 100% 100%;
+
+
+}
+.name{
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    top:43px;
+}
+.social{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    left:3%;
+}
+.social li{
+	display: inline-block;
+	margin-right: 100px;
+	text-align: center;
+	font-size: 36px;
+	height:70px;
+	width: 70px;
+	border:2px solid black;
+	overflow-y: hidden;
+	border-radius: 50%;
+	padding:10px;
+
+}
+.fb{
+  color:blue;
+}
+.lnkd{
+   color:black;
+}
+.cp{
+   color:brown;
+}
+.quora{
+    color:red;
+}
+.fb:hover{
+  color:white;
+  background-color: #50A8D6;
+  
+  
+  transition: all .3s;
+
+}
+.lnkd:hover{
+   color:white;
+  background-color: #50A8D6;
+  
+  
+  transition: all .3s;
+}
+.cp:hover{
+   color:white;
+  background-color: black;
+  
+  
+  transition: all .3s;
+}
+.quora:hover{
+    color:red;
+  background-color: black;
+  
+  
+  transition: all .3s;
+}
+.social1{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    top: 25px;
+    left:7%;
+    height: 60px;
+
+}
+.social1 li{
+	display: inline-block;
+	margin-right: 230px;
+	text-align: center;
+	font-size: 20px;
+	font-family: 'Orbitron', sans-serif;
+	color: #BDBDBD;
+    letter-spacing: 1px;
+}
+.fa-envelope{
+	position: relative;
+	top:3px;
+
+}
+.fa-phone{
+	position: relative;
+	top:5px;
+}
+.footer{
+	background-color: #2D2D2D;
+      overflow-y: hidden;
+      overflow-x: hidden;
+	  text-align: center;
+	  margin-top: 100px;
+}
