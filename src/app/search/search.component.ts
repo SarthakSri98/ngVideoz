@@ -3,14 +3,19 @@ import { FormGroup,FormControl } from '@angular/forms';
 import { MusicServiceService } from '../music-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import {NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+// import { slideInOutAnimation } from '../slide-in-out-animations';
 declare var jquery:any;
 declare var $ :any;
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+      // // make fade in animation available to this component
+      // animations: [slideInOutAnimation],
+ 
+      // // attach the fade in animation to the host (root) element of this component
+      // host: { '[@slideInOutAnimation]': '' }
 })
 export class SearchComponent implements OnInit {
   searchStr:string;

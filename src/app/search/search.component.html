@@ -13,7 +13,7 @@
     <img id="albumImg" [src]="video.thumbnail_url">
     <div class="videoInfo">
     <p class="name">{{video.title}}</p>
-    <button (click)="open(embedVideo,i)" class="btn " id="embedModalBtn">Stream video Online</button>
+    <button mat-button (click)="open(embedVideo,i)" class="btn " id="embedModalBtn">Stream video Online</button>
   </div>
  </div>
 </div> 
@@ -26,8 +26,8 @@
     </button>
   </div>
   <div class="modal-body">
-   <div class="video">
-    <iframe frameborder="0" width="480" height="270"
+   <div class="video-container">
+    <iframe frameborder="0" 
     [src]="embedUrl | safe"
     allowfullscreen allow="autoplay"></iframe> 
    </div>

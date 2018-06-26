@@ -32,6 +32,20 @@ img{
     min-height: max-content;
     box-shadow: 2px 2px 5px #5A4742;
 }
+.about{
+	background-color: #F5F5F5;
+	margin: 0;
+	height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x:hidden;
+	margin: 0;
+    padding: 0;
+    padding-bottom:50px;
+    min-height: max-content;
+    box-shadow: 2px 2px 5px #5A4742;
+}
 .dp{
 	height:180px;
 	width:210px;
@@ -40,8 +54,6 @@ img{
 	left:40%;
 	border:none;
 	background-size: 100% 100%;
-
-
 }
 .name{
     font-family: 'Orbitron', sans-serif;
@@ -132,19 +144,45 @@ img{
 	color: #BDBDBD;
     letter-spacing: 1px;
 }
-.fa-envelope{
-	position: relative;
-	top:3px;
 
-}
-.fa-phone{
-	position: relative;
-	top:5px;
-}
 .footer{
 	background-color: #2D2D2D;
       overflow-y: hidden;
       overflow-x: hidden;
 	  text-align: center;
 	  margin-top: 100px;
+}
+
+@media only screen and (max-width: 1200px){
+
+    .content{
+        margin-left: 0;
+        padding:20px;
+    }
+    .dp{
+        height:130px;
+	width:160px;
+	position: relative;
+	top:28px;
+	left:28%;
+	border:none;
+	background-size: 100% 100%;
+    }
+    .social{
+        position: relative;
+        left:10%;
+    }
+    .social1{
+        position: relative;
+        top:0;
+        left:-16px;
+        height: 60px;
+    }
+    .social1 li{
+        font-size: 14px;
+        margin-right: 0;
+    }
+    .footer{
+        text-align:center;
+    }
 }

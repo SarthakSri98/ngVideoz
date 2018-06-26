@@ -13,6 +13,10 @@ h1{
     100% { background-color:#5F0F0C; color:whitesmoke }   
 }
 
+
+.btn-default{
+    cursor: pointer;
+}
 h2{
     font-family: 'Bowlby One SC';
     text-align: center;
@@ -31,8 +35,12 @@ h2{
     height: 160px;
     background-color:rgb(0,0,0,.5);
     margin:15px;
-    
+    transition: all .3s;
 }
+#videoCards:hover{
+      box-shadow: 3px 3px 10px #2c362e ;
+}
+
 #albumImg{
     height: 160px;
     width:16%;
@@ -44,7 +52,7 @@ h2{
     white-space: normal;
     width:280px;
     position: relative;
-    left:120px;
+    left:27%;
 }
 #embedModalBtn{
     position: relative;
@@ -73,19 +81,55 @@ p{
     text-align: center;
     color:white;
 }
-.video{
+.video-container {
     position: relative;
-    right:51%;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
 }
 
-@media only screen and (max-width: 600px){
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1200px){
     *{
         font-size: 12px;
     }
-    #videoCards{
-        width: calc(100% - 600px);
-        height: 80px;
-        background-color:rgb(0,0,0,.5);
-        margin:15px;
+    .name{
+        font-size: 14px;
     }
+    #albumImg{
+        height: 120px;
+        width:25%;
+    }
+    #embedModalBtn{
+        position: relative;
+        left:42%;
+        margin-top:-64px !important;
+        transition: none;
+    }
+    #embedModalBtn{
+        animation: none;
+    }
+    .videoInfo{
+        max-width:140px;
+        position: relative;
+        left:14%;
+        bottom:14px;
+    }
+    #videoCards{
+        float:none;
+        width: 80%;
+        height: 120px;
+        background-color:rgb(0,0,0,.5);
+        margin:20px;
+    }
+    
+    
 }

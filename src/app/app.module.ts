@@ -11,8 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SafePipe } from './safe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 const route:Routes = [
+  { path:'' ,redirectTo:'home' , pathMatch:'full' },
   { path:'home' ,component:SearchComponent },
   { path:'about' ,component:AboutComponent },
 ];
@@ -29,7 +32,8 @@ const route:Routes = [
     BrowserModule,
     RouterModule.forRoot(route),
     ReactiveFormsModule,HttpClientModule,HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule, MatButtonModule
   ],
   providers: [MusicServiceService],
   bootstrap: [AppComponent]

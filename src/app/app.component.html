@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
 <div class='container'>
 <br><br>    
-<router-outlet></router-outlet>
+<!-- <div class="main" [@animRoutes]="getAnim(appOutlet)"> -->
+    <div class="main">
+    <router-outlet #appOutlet="outlet"></router-outlet>
+  </div>
 </div>
