@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Bowlby+One+SC|Markazi+Text|Amatic+SC');
 
 @keyframes navAnim{
     from {  border-bottom:3px solid red; display:none }
@@ -19,6 +20,8 @@ a{
 
 .nav li{
     float:left;
+    font-family: 'Markazi Text';
+    font-size: 20px;
 }
 .nav li:hover{
     animation: navAnim 100s;
@@ -35,4 +38,7 @@ nav{
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+}
+.navbar-header{
+    margin-top:3px;
 }

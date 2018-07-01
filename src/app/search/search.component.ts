@@ -1,9 +1,11 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { MusicServiceService } from '../music-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import {NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-// import { slideInOutAnimation } from '../slide-in-out-animations';
+import { MatDialog,MatDialogConfig,MAT_DIALOG_DATA } from '@angular/material/';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { transition,trigger,style,animate,state,stagger,query, keyframes } from '@angular/animations';
 declare var jquery:any;
 declare var $ :any;
 
@@ -11,11 +13,18 @@ declare var $ :any;
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
-      // // make fade in animation available to this component
-      // animations: [slideInOutAnimation],
- 
-      // // attach the fade in animation to the host (root) element of this component
-      // host: { '[@slideInOutAnimation]': '' }
+  animations: [
+    
+  trigger('fadeIn',  [
+     transition('*=>*',[
+        query(':enter',style({opacity:0,transform:'translate(0,-20px)'}),{optional:true}),
+        query(':enter',stagger('200ms',[
+             animate('.3s ease-in',style({ opacity:1,transform:'translate(0,0)' }))
+
+        ]),{optional:true}),
+      ])
+    ])
+  ]
 })
 export class SearchComponent implements OnInit {
   searchStr:string;
@@ -26,11 +35,31 @@ export class SearchComponent implements OnInit {
   closeResult : string;
   currentVideoId : string ;
   currentVideoName : string;
-  constructor(private modalService: NgbModal,private _musicSerivice:MusicServiceService,public sanitizer: DomSanitizer) { }
+  height;
+  width;
+  constructor(private modalService: MatDialog ,private _musicSerivice:MusicServiceService,public sanitizer: DomSanitizer,private breakPointObserver:BreakpointObserver) {
+   }
 
   ngOnInit() {
-    //this.modalBtnHover();
-  }
+    this.breakPointObserver.observe([
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait,
+    ]).subscribe( result => {
+      if(result.matches)
+      {
+            this.height='380px';
+            this.width='100%';
+            console.log('layout is small size');
+            console.log(this.height);
+      }
+      else
+      {
+            this.height='480px';
+            this.width='600px';
+            console.log('layout is full size');
+            console.log(this.height);
+      }
+    })  }
   
 
   open(content,i) {
@@ -38,23 +67,18 @@ export class SearchComponent implements OnInit {
     this.embedUrl = "//www.dailymotion.com/embed/video/"+this.currentVideoId;
 
     this.currentVideoName = this.videoArray[i].title;
-    console.log(this.currentVideoId);
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    const dialogConfig = new MatDialogConfig();
+    this.modalService.open(content,{
+      height: this.height,
+      width: this.width,
     });
-  }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+    
   }
+  Cross_click(){
+      this.modalService.closeAll();
+  }
+  
 
  
 
@@ -64,7 +88,7 @@ export class SearchComponent implements OnInit {
   });
   onSubmit(){
      this._musicSerivice.searchVideo(this.searchStr).subscribe( result =>
-      {
+      { 
         this.videoArray = result["list"];
         console.log(result['url']);
         console.log(this.videoArray);

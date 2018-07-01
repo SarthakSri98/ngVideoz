@@ -6,19 +6,18 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class MusicServiceService {
   searchURL:string;
+  limit:number=49;
   constructor(private _http:HttpClient,) { }
-
+  
        
 
-//    httpOptions = {
-//     headers: new HttpHeaders({
-//       "X-Mashape-Key": "wydRO7blJSmshZqZVcu0ODx503zJp1iyTw8jsnJ1c4qFzKLES1",
-//       "Accept": "application/json"
-//    })
-// };
+
+
 
   searchVideo(str:string){
-    return this._http.get("https://api.dailymotion.com/videos?fields=id,thumbnail_url%2Ctitle&search="+str+"&limit=50");
+    this.limit++;
+    console.log(this.limit);
+    return this._http.get("https://api.dailymotion.com/videos?fields=id,thumbnail_url%2Ctitle&search="+str+"&limit="+this.limit);
   }
 
   embedVideo(str:string){

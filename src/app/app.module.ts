@@ -12,8 +12,10 @@ import { HttpModule } from '@angular/http';
 import { SafePipe } from './safe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+//import {MatIconModule} from '@angular/material/icon';
 const route:Routes = [
   { path:'' ,redirectTo:'home' , pathMatch:'full' },
   { path:'home' ,component:SearchComponent },
@@ -33,7 +35,11 @@ const route:Routes = [
     RouterModule.forRoot(route),
     ReactiveFormsModule,HttpClientModule,HttpModule,
     NgbModule.forRoot(),
-    BrowserAnimationsModule, MatButtonModule
+    BrowserAnimationsModule,
+     MatButtonModule,
+     MatDialogModule,
+     MatInputModule,
+    // MatIconModule
   ],
   providers: [MusicServiceService],
   bootstrap: [AppComponent]
