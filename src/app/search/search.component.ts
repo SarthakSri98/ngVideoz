@@ -47,14 +47,14 @@ export class SearchComponent implements OnInit {
     ]).subscribe( result => {
       if(result.matches)
       {
-            this.height='380px';
+            this.height='405px';
             this.width='100%';
             console.log('layout is small size');
             console.log(this.height);
       }
       else
       {
-            this.height='480px';
+            this.height='500px';
             this.width='600px';
             console.log('layout is full size');
             console.log(this.height);
@@ -71,6 +71,7 @@ export class SearchComponent implements OnInit {
     this.modalService.open(content,{
       height: this.height,
       width: this.width,
+      panelClass: 'custom-modalbox'
     });
 
     

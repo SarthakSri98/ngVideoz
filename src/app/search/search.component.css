@@ -1,175 +1,201 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Bowlby+One+SC|Markazi+Text|Amatic+SC');
-h1{
-    font-family: 'Amatic SC';
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: .5px;
-    position: relative;
-    bottom:10px;
-    text-shadow: 2px 2px 10px rgb(124, 87, 87,.7);
-    font-weight: 590;
+h1 {
+  font-family: 'Amatic SC';
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: .5px;
+  position: relative;
+  bottom: 10px;
+  text-shadow: 2px 2px 10px rgb(124, 87, 87, .7);
+  font-weight: 590;
 }
- form {
-    min-width: 150px;
-    max-width: 900px;
-    width: 100%;
-    margin-left: 9%;
+
+ng-template {
+  position: relative;
+  left: 600px;
+}
+
+form {
+  min-width: 150px;
+  max-width: 900px;
+  width: 100%;
+  margin-left: 9%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.close {
+  outline: none;
+}
+
+@keyframes btnColor {
+  0% {
+    transform: translate(0, 0)
   }
-  
-  mat-form-field {
-    width: 100%;
+  100% {
+    transform: translate(0, -2px)
   }
-.close{
-    outline:none;
-}
-@keyframes btnColor{
-    0% { transform: translate(0,0)}
-    100% { transform: translate(0,-2px) }   
-}
-@keyframes videoCardTranslate{
-    from { transform: translate(-50px,-50px); }
-    from { transform: translate(0,0); }
 }
 
-.submitBtn{
-    cursor: pointer;
-    font-weight: 10;
-    width:20px!important;
-    background: none;
-    padding-right: 30px;
+@keyframes videoCardTranslate {
+  from {
+    transform: translate(-50px, -50px);
+  }
+  from {
+    transform: translate(0, 0);
+  }
 }
 
-h2{
-    font-family: 'Bowlby One SC';
-    text-align: center;
-}
-.name{
-    font-family: 'Markazi Text', serif;
-        font-size: 18px;
-        position: relative;
-        left:60px;
-        top:20px;
-
-}
-#videoCards{
-    float:left;
-    width: calc(100% - 600px);
-    height: 160px;
-    background-color:rgb(0,0,0,.5);
-    margin:15px;
-    transition: all .3s;
-}
-#videoCards:hover{
-      box-shadow: 3px 3px 10px #2c362e ;
+.submitBtn {
+  cursor: pointer;
+  font-weight: 10;
+  width: 20px !important;
+  background: none;
+  padding-right: 30px;
 }
 
-#albumImg{
-    height: 160px;
-    width:36%;
-    max-width: 150px;
-    position: absolute;
-
-}
-.videoInfo{
-    display: inline-block;
-    word-wrap:break-word;
-    white-space: normal;
-    width:280px;
-    position: relative;
-    left:27%;
-}
-#embedModalBtn{
-    position: relative;
-    left:42%;
-    top: 20px;
-    font-weight: 100;
-    font-size: 17px;
-    transition:all .2s ease-in;
-}
-#embedModalBtn:hover{
-
-    animation: btnColor .6s;
-    transform: translate(0,-2px);
-}
-.container{
-   position: relative;
-   left: 1%;
+h2 {
+  font-family: 'Bowlby One SC';
+  text-align: center;
 }
 
-iframe{
-    position: relative;
-    left:50%;
+.name {
+  font-family: 'Markazi Text', serif;
+  font-size: 18px;
+  position: relative;
+  left: 60px;
+  top: 20px;
 }
 
-p{
-    position: relative;
-    bottom:60%;
-    text-align: center;
-    color:white;
+#videoCards {
+  float: left;
+  width: calc(100% - 600px);
+  height: 160px;
+  background-color: rgb(0, 0, 0, .5);
+  margin: 15px;
+  transition: all .3s;
 }
+
+#videoCards:hover {
+  box-shadow: 3px 3px 10px #2c362e;
+}
+
+#albumImg {
+  height: 160px;
+  width: 36%;
+  max-width: 150px;
+  position: absolute;
+}
+
+.videoInfo {
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: normal;
+  width: 280px;
+  position: relative;
+  left: 27%;
+}
+
+#embedModalBtn {
+  position: relative;
+  left: 42%;
+  top: 20px;
+  font-weight: 100;
+  font-size: 17px;
+  transition: all .2s ease-in;
+}
+
+#embedModalBtn:hover {
+  animation: btnColor .6s;
+  transform: translate(0, -2px);
+}
+
+.container {
+  position: relative;
+  left: 1%;
+}
+
+iframe {
+  position: relative;
+  left: 50%;
+}
+
+p {
+  position: relative;
+  bottom: 60%;
+  text-align: center;
+  color: white;
+}
+
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 
 .video-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@media only screen and (max-width: 1200px){
-    *{
-        font-size: 12px;
-    }
-    .name{
-        font-size: 12px;
-    }
-    form{
-        margin-left: auto;
-    }
-    #albumImg{
-        height: 120px;
-        width:36%;
-        max-width: 86px;
-    }
-    #embedModalBtn{
-        position: relative;
-        left:45.5%;
-        margin-top:-64px !important;
-        transition: none;
-        font-weight: 100;
+#footer {
+  display: block;
+}
+
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 12px;
+  }
+  .name {
+    font-size: 12px;
+  }
+  form {
+    margin-left: auto;
+  }
+  #albumImg {
+    height: 120px;
+    width: 36%;
+    max-width: 86px;
+  }
+  #embedModalBtn {
+    position: relative;
+    left: 45.5%;
+    margin-top: -64px !important;
+    transition: none;
+    font-weight: 100;
     font-size: 11px;
-    }
-    #embedModalBtn{
-        animation: none;
-    }
-    .videoInfo{
-        max-width:140px;
-        position: relative;
-        left:14%;
-        bottom:14px;
-    }
-    #videoCards{
-        float:none;
-        width: 80%;
-        height: 120px;
-        background-color:rgb(0,0,0,.5);
-        margin:20px;
-    }
-    .video-container {
-        position: relative;
-        padding-bottom: 100%;
-        padding-top: 0;
-        height: 0;
-        overflow: hidden;
-    }
-    .submitBtn{
-        padding-right: 20px;
-    }
+  }
+  #embedModalBtn {
+    animation: none;
+  }
+  .videoInfo {
+    max-width: 140px;
+    position: relative;
+    left: 14%;
+    bottom: 14px;
+  }
+  #videoCards {
+    float: none;
+    width: 80%;
+    height: 120px;
+    background-color: rgb(0, 0, 0, .5);
+    margin: 20px;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 100%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .submitBtn {
+    padding-left: 20px !important;
+  }
 }

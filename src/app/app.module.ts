@@ -41,6 +41,7 @@ const route:Routes = [
      MatInputModule,
     // MatIconModule
   ],
+
   providers: [MusicServiceService],
   bootstrap: [AppComponent]
 })
