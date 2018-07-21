@@ -42,3 +42,13 @@ nav{
 .navbar-header{
     margin-top:3px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .navbar-header{
+        display: none;
+    }
+    .navbar-nav{
+        position: relative;
+        left:-45px;
+    }
+}

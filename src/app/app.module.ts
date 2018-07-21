@@ -15,11 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FavouritesComponent } from './favourites/favourites.component';
 //import {MatIconModule} from '@angular/material/icon';
 const route:Routes = [
   { path:'' ,redirectTo:'home' , pathMatch:'full' },
   { path:'home' ,component:SearchComponent },
   { path:'about' ,component:AboutComponent },
+  { path:'fav' ,component:FavouritesComponent },
+  
 ];
 
 @NgModule({
@@ -28,7 +32,8 @@ const route:Routes = [
     NavbarComponent,
     AboutComponent,
     SearchComponent,
-    SafePipe
+    SafePipe,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,

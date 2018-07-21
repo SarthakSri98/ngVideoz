@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { MusicServiceService } from '../music-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatDialog,MatDialogConfig,MAT_DIALOG_DATA } from '@angular/material/';
+import { MatDialog,MatDialogConfig,MAT_DIALOG_DATA,MatTooltip } from '@angular/material/';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { transition,trigger,style,animate,state,stagger,query, keyframes } from '@angular/animations';
+import { FavServiceService } from '../fav-service.service';
 declare var jquery:any;
 declare var $ :any;
 
@@ -37,7 +38,8 @@ export class SearchComponent implements OnInit {
   currentVideoName : string;
   height;
   width;
-  constructor(private modalService: MatDialog ,private _musicSerivice:MusicServiceService,public sanitizer: DomSanitizer,private breakPointObserver:BreakpointObserver) {
+  currentVideoAttributes={};
+  constructor(private modalService: MatDialog ,private _musicSerivice:MusicServiceService,private _favVideo:FavServiceService,public sanitizer: DomSanitizer,private breakPointObserver:BreakpointObserver) {
    }
 
   ngOnInit() {
@@ -81,6 +83,15 @@ export class SearchComponent implements OnInit {
   }
   
 
+ addToFav(i){
+  this._favVideo.favVideos = JSON.parse(localStorage.getItem('favVideoArray'));
+  this.currentVideoAttributes = this.videoArray[i];
+  this._favVideo.favVideos.push(this.currentVideoAttributes);
+  localStorage.setItem('favVideoArray',JSON.stringify(this._favVideo.favVideos));
+  
+  console.log(this._favVideo.favVideos);
+
+ }
  
 
 

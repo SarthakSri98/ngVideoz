@@ -23,8 +23,9 @@
       <img id="albumImg" [src]="video.thumbnail_url">
     </a>
     <div class="videoInfo">
+      <button mat-mini-fab id="plus" data-toggle="tooltip" title="Add to favourites" (click)=' addToFav(i)'><i  class="fa fa-plus"></i></button>
       <p class="name">{{video.title}}</p>
-      <button mat-raised-button (click)="open(embedVideo,i)" class="btn " id="embedModalBtn">Stream video Online</button>
+      <button mat-raised-button (click)="open(embedVideo,i)" class="btn" id="embedModalBtn">Stream video Online</button>
     </div>
   </div>
 </div>
