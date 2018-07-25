@@ -84,7 +84,11 @@ export class SearchComponent implements OnInit {
   
 
  addToFav(i){
+  if(JSON.parse(localStorage.getItem('favVideoArray'))!=null){
   this._favVideo.favVideos = JSON.parse(localStorage.getItem('favVideoArray'));
+  }
+  console.log('sf');
+  console.log(this._favVideo.favVideos);
   this.currentVideoAttributes = this.videoArray[i];
   this._favVideo.favVideos.push(this.currentVideoAttributes);
   localStorage.setItem('favVideoArray',JSON.stringify(this._favVideo.favVideos));
