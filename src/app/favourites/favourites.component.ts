@@ -30,7 +30,7 @@ export class FavouritesComponent implements OnInit {
     console.log(this.showSorryArray);
    // this.favVideoz = this.showSorryArray;
     this.favVideoz = this.favVideoz.concat(this.showSorryArray);
-    console.log(this.favVideoz);
+    console.log('favourite videos',this.favVideoz);
     this.breakPointObserver.observe([
       Breakpoints.HandsetLandscape,
       Breakpoints.HandsetPortrait,

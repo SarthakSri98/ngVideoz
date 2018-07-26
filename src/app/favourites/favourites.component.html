@@ -1,9 +1,9 @@
-<div *ngIf='showSorryArray.length<=0'>
+<div *ngIf='favVideoz.length<=0'>
   <h1 class="sorry">SORRY! NO FAVOURITES TO SHOW&nbsp;<i class="fa fa-sad-tear"></i></h1>
 </div>
-<div *ngIf='showSorryArray.length>0'>
+<div *ngIf='favVideoz.length>0'>
   <div class="container">
-        <div *ngFor='let video of favVideoz.reverse();let i = index' id="videoCards">
+        <div *ngFor='let video of favVideoz;let i = index' id="videoCards">
           <a [href]='video.thumbnail_url'>
             <img id="albumImg" [src]="video.thumbnail_url">
           </a>
